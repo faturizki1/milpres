@@ -24,7 +24,7 @@ export default async function TenantLayout({ children, params }: { children: Rea
           children
         )}
       </main>
-      <Footer siteConfig={config.siteConfig} tenantSlug={tenantSlug} />
+      <Footer siteConfig={config.siteConfig} />
     </div>
   )
 }

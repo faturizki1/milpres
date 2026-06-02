@@ -1,8 +1,8 @@
 "use client"
-import React, { useState } from 'react'
+import { useState } from 'react'
 import MediaPicker from '../../../../components/MediaPicker'
 
-const TiptapPlaceholder = ({ onInsert }:{onInsert?:(url:string)=>void}) => (
+const TiptapPlaceholder = ({ onInsert }:{onInsert?:(_url:string)=>void}) => (
   <div style={{border:'1px solid #ddd', minHeight:200, padding:8}}>
     <div>Tiptap editor placeholder</div>
     <div style={{marginTop:8}}>

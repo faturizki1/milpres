@@ -1,12 +1,12 @@
 "use client"
-import React, { createContext, useContext, useState, useEffect } from 'react'
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import jwt_decode from 'jwt-decode'
 import { useRouter } from 'next/navigation'
 
 type AuthContextValue = {
   token: string | null
   role?: string | null
-  login: (email:string,password:string)=>Promise<boolean>
+  login: (_email:string,_password:string)=>Promise<boolean>
   logout: ()=>void
   refresh: ()=>Promise<boolean>
 }
@@ -19,14 +19,14 @@ export function useAuth(){
   return ctx
 }
 
-export function AuthProvider({ children }: { children: React.ReactNode }){
+export function AuthProvider({ children }: { children: ReactNode }){
   const [token, setToken] = useState<string | null>(null)
   const [role, setRole] = useState<string | null>(null)
   const router = useRouter()
 
   useEffect(()=>{
     // attempt silent refresh on mount
-    (async ()=>{ await refresh() })()
+    (async () => { await refresh() })()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
@@ -38,7 +38,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }){
       const data = await res.json()
       if(data.access_token){
         setToken(data.access_token)
-        try{ const payload:any = jwt_decode(data.access_token); setRole(payload.role || null) }catch(e){setRole(null)}
+        try {
+          const payload:any = jwt_decode(data.access_token)
+          setRole(payload.role || null)
+        } catch (e) {
+          setRole(null)
+        }
         // redirect based on role
         if(role === 'SUPER_ADMIN') router.push('/super-admin')
         else router.push('/dashboard')
@@ -51,12 +56,23 @@ export function AuthProvider({ children }: { children: React.ReactNode }){
   function logout(){ setToken(null); setRole(null); router.push('/(auth)/login') }
 
   async function refresh(){
-    try{
+    try {
       const res = await fetch(process.env.NEXT_PUBLIC_AUTH_URL || 'http://localhost:4001' + '/auth/refresh', { method: 'POST', credentials: 'include' })
       const data = await res.json()
-      if(data.access_token){ setToken(data.access_token); try{ const payload:any = jwt_decode(data.access_token); setRole(payload.role||null) }catch(e){}; return true }
+      if(data.access_token){
+        setToken(data.access_token)
+        try {
+          const payload:any = jwt_decode(data.access_token)
+          setRole(payload.role||null)
+        } catch (e) {
+          // ignore invalid token payload
+        }
+        return true
+      }
       return false
-    }catch(e){ return false }
+    } catch (e) {
+      return false
+    }
   }
 
   return (

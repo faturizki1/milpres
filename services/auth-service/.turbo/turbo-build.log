@@ -3,13 +3,3 @@
 > @milpers/auth-service@0.0.0 build /workspaces/milpres/services/auth-service
 > tsc -p tsconfig.build.json
 
-[96msrc/main.ts[0m:[93m3[0m:[93m26[0m - [91merror[0m[90m TS7016: [0mCould not find a declaration file for module 'cookie-parser'. '/workspaces/milpres/node_modules/.pnpm/cookie-parser@1.4.7/node_modules/cookie-parser/index.js' implicitly has an 'any' type.
-  Try `npm i --save-dev @types/cookie-parser` if it exists or add a new declaration (.d.ts) file containing `declare module 'cookie-parser';`
-
-[7m3[0m import cookieParser from 'cookie-parser'
-[7m [0m [91m                         ~~~~~~~~~~~~~~~[0m
-
-
-Found 1 error in src/main.ts[90m:3[0m
-
-[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 2.[39m

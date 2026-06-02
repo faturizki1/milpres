@@ -1,9 +1,9 @@
 "use client"
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAuth } from '../../../components/AuthProvider'
 
 export default function ContentsList(){
-  const { token } = useAuth()
+  useAuth()
   const [rows,setRows] = useState<any[]>([])
   useEffect(()=>{
     (async ()=>{
