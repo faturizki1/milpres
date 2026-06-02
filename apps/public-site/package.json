@@ -1,0 +1,11 @@
+{
+  "name": "@milpers/public-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"build public-site\"",
+    "dev": "echo \"dev public-site\"",
+    "lint": "echo \"lint public-site\"",
+    "test": "echo \"test public-site\""
+  }
+}

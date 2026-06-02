@@ -1,0 +1,12 @@
+{
+  "name": "@milpers/content-service",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo \"build content-service\"",
+    "dev": "echo \"dev content-service\"",
+    "lint": "echo \"lint content-service\"",
+    "test": "echo \"test content-service\"",
+    "db:migrate": "echo \"migrate content-service\""
+  }
+}

@@ -1,0 +1,228 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  ADMIN
+  STAFF
+}
+
+enum ContentStatus {
+  DRAFT
+  IN_REVIEW
+  APPROVED
+  PUBLISHED
+  REJECTED
+}
+
+enum ContentType {
+  ARTICLE
+  EVENT
+  ANNOUNCEMENT
+  OTHER
+}
+
+model Tenant {
+  id          String    @id @default(uuid()) @db.Uuid
+  slug        String    @unique
+  name        String
+  customDomain String?  @unique
+  status      String    @default("ACTIVE")
+  metadata    Json      @default("{}")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  users       User[]
+  categories  Category[]
+  contents    Content[]
+  media       Media[]
+  tags        Tag[]
+  siteConfig  SiteConfig?
+}
+
+model User {
+  id           String   @id @default(uuid()) @db.Uuid
+  tenantId     String   @db.Uuid
+  email        String
+  passwordHash String
+  fullName     String
+  rank         String?
+  nrp          String?  @unique
+  role         Role
+  status       String   @default("ACTIVE")
+  lastLoginAt  DateTime?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  contents Content[] @relation("AuthorContents")
+  contentVersions ContentVersion[] @relation("EditorVersions")
+  media Media[]
+}
+
+model Category {
+  id         String   @id @default(uuid()) @db.Uuid
+  tenantId   String   @db.Uuid
+  name       String
+  slug       String
+  description String?
+  color      String?
+  icon       String?
+  sortOrder  Int      @default(0)
+  createdAt  DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  contents Content[]
+
+  @@unique([tenantId, slug])
+}
+
+model Content {
+  id               String        @id @default(uuid()) @db.Uuid
+  tenantId         String        @db.Uuid
+  authorId         String        @db.Uuid
+  categoryId       String?       @db.Uuid
+  title            String
+  slug             String
+  excerpt          String?
+  body             String
+  thumbnailId      String?       @db.Uuid
+  contentType      ContentType
+  status           ContentStatus @default(DRAFT)
+  isFeatured       Boolean       @default(false)
+  isBreakingNews   Boolean       @default(false)
+  viewCount        BigInt        @default(0)
+  readTimeMinutes  Int?
+  publishedAt      DateTime?
+  scheduledAt      DateTime?
+  rejectedReason   String?
+  seoTitle         String?
+  seoDescription   String?
+  ogImageId        String?       @db.Uuid
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  author User @relation("AuthorContents", fields: [authorId], references: [id], onDelete: Cascade)
+  category Category? @relation(fields: [categoryId], references: [id])
+  thumbnail Media? @relation("Thumbnail", fields: [thumbnailId], references: [id])
+  ogImage Media? @relation("OgImage", fields: [ogImageId], references: [id])
+  versions ContentVersion[]
+  tags ContentTag[]
+
+  @@unique([tenantId, slug])
+  @@index([tenantId, status, publishedAt])
+}
+
+model ContentVersion {
+  id         String   @id @default(uuid()) @db.Uuid
+  contentId  String   @db.Uuid
+  editorId   String   @db.Uuid
+  versionNum Int
+  title      String
+  body       String
+  changeNote String?
+  createdAt  DateTime @default(now())
+
+  content Content @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  editor User @relation("EditorVersions", fields: [editorId], references: [id])
+
+  @@unique([contentId, versionNum])
+}
+
+model Media {
+  id           String   @id @default(uuid()) @db.Uuid
+  tenantId     String   @db.Uuid
+  uploaderId   String   @db.Uuid
+  filename     String
+  originalName String
+  mimeType     String
+  sizeBytes    BigInt
+  width        Int?
+  height       Int?
+  durationSec  Int?
+  storageKey   String
+  thumbnailKey String?
+  altText      String?
+  caption      String?
+  usageCount   Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  uploader User @relation(fields: [uploaderId], references: [id])
+  thumbnailFor Content[] @relation("Thumbnail")
+  ogFor Content[] @relation("OgImage")
+}
+
+model Tag {
+  id       String   @id @default(uuid()) @db.Uuid
+  tenantId String   @db.Uuid
+  name     String
+  createdAt DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  contents ContentTag[]
+
+  @@unique([tenantId, name])
+}
+
+model ContentTag {
+  contentId String @db.Uuid
+  tagId     String @db.Uuid
+
+  content Content @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  tag     Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([contentId, tagId])
+}
+
+model AuditLog {
+  id         String   @id @default(uuid()) @db.Uuid
+  tenantId   String?  @db.Uuid
+  actorId    String?
+  actorRole  String
+  action     String
+  resource   String
+  resourceId String?
+  ipAddress  String?
+  userAgent  String?
+  payload    Json     @default("{}")
+  createdAt  DateTime @default(now())
+}
+
+model SiteConfig {
+  tenantId     String   @id @db.Uuid
+  siteName     String?
+  tagline      String?
+  logoMediaId  String?  @db.Uuid
+  faviconMediaId String? @db.Uuid
+  primaryColor String?
+  secondaryColor String?
+  heroType     String?  @default("CAROUSEL")
+  maintenanceMode Boolean @default(false)
+  maintenanceMsg String?
+  footerText   String?
+  contactEmail String?
+  contactPhone String?
+  address      String?
+  lat          Decimal?
+  lng          Decimal?
+  socialLinks  Json     @default("{}")
+  commentEnabled Boolean @default(false)
+  customCss    String?
+  customJs     String?
+  analyticsId  String?
+  updatedAt    DateTime @default(now())
+
+  tenant Tenant @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+}
+
+// NOTE: Additional indexes and RLS/FTS partial indexes are created via raw SQL
+// in `prisma/rls_and_indexes.sql` because Prisma schema doesn't support partial
+// indexes or RLS policies directly.
