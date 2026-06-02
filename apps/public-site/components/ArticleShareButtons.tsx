@@ -1,5 +1,4 @@
 'use client'
-import Link from 'next/link'
 
 const sharePlatforms = [
   { name: 'WhatsApp', prefix: 'https://api.whatsapp.com/send?text=' },

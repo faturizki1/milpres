@@ -18,11 +18,11 @@ export class PublicController {
     const tenant = await prisma.tenant.findFirst({ where: { slug: tenantSlug } })
     if(!tenant) return []
     const contents = await prisma.content.findMany({
-      where: { tenantId: tenant.id, status: 'PUBLISHED', deletedAt: null },
+      where: { tenantId: tenant.id, status: 'PUBLISHED' },
       orderBy: { publishedAt: 'desc' },
       include: { category: true, tags: true, thumbnail: true, ogImage: true }
     })
-    contents.forEach(c => prisma.content.update({ where: { id: c.id }, data: { viewCount: { increment: 1 } } }).catch(()=>{}))
+    contents.forEach((c:any) => prisma.content.update({ where: { id: c.id }, data: { viewCount: { increment: 1 } } }).catch(()=>{}))
     return contents
   }
 
@@ -31,7 +31,7 @@ export class PublicController {
     const tenant = await prisma.tenant.findFirst({ where: { slug: tenantSlug } })
     if(!tenant) throw new NotFoundException('tenant_not_found')
     const content = await prisma.content.findFirst({
-      where: { tenantId: tenant.id, slug, status: 'PUBLISHED', deletedAt: null },
+      where: { tenantId: tenant.id, slug, status: 'PUBLISHED' },
       include: { category: true, tags: true, thumbnail: true, ogImage: true }
     })
     if(!content) throw new NotFoundException('article_not_found')

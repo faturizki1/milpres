@@ -1,0 +1,13 @@
+{
+  "root": true,
+  "extends": ["next/core-web-vitals", "eslint:recommended"],
+  "ignorePatterns": ["node_modules/", "dist/", ".next/"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off"
+  }
+}

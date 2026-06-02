@@ -1,6 +1,5 @@
 'use client'
 import Masonry from 'react-masonry-css'
-import { useState } from 'react'
 
 export type GalleryPhoto = {
   id: string

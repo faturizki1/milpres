@@ -4,7 +4,7 @@ import { fetchTenantContents, fetchTenantSiteConfig } from '../../../lib/api'
 export async function GET(request: NextRequest, { params }: { params: Promise<{ tenantSlug: string }> }) {
   const { tenantSlug } = await params
   const contents = await fetchTenantContents(tenantSlug)
-  const siteConfig = await fetchTenantSiteConfig(tenantSlug)
+  const _siteConfig = await fetchTenantSiteConfig(tenantSlug)
   const hostname = process.env.PUBLIC_SITE_HOST || 'https://example.com'
 
   const urls = [

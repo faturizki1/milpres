@@ -7,7 +7,9 @@
     "skipLibCheck": true,
     "outDir": "dist",
     "baseUrl": "./",
-    "paths": { "@milpers/*": ["../*"] }
+    "paths": { "@milpers/*": ["../*"] },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "include": ["src/**/*.ts"]
 }

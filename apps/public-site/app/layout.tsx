@@ -1,4 +1,5 @@
 import './globals.css'
+import { ReactNode } from 'react'
 
 export const metadata = {
   title: 'Public Site',
@@ -6,7 +7,7 @@ export const metadata = {
   manifest: '/manifest.json',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="id">
       <body>{children}</body>

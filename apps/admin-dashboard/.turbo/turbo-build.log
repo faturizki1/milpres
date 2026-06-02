@@ -1,7 +1,25 @@
 
 
-> @milpers/admin-dashboard@0.0.0 build
-> echo "build admin-dashboard"
+> admin-dashboard@0.0.0 build /workspaces/milpres/apps/admin-dashboard
+> next build
 
-build admin-dashboard
-⠙[1G[0K
+  [1m[38;2;173;127;168m▲ Next.js 15.0.0[39m[22m
+
+ [37m[1m [22m[39m Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'typescript/lib/typescript' in /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build for build dependencies doesn't lead to expected result '/workspaces/milpres/node_modules/typescript/lib/typescript.js', but to '/workspaces/milpres/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js' instead. Resolving dependencies are ignored for this path.
+<w>  at unknown 4 typescript/lib/typescript
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/plugins/next-trace-entrypoints-plugin.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack-config.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack-config.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/handle-externals.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/handle-externals.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at resolve commonjs /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js

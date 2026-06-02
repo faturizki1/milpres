@@ -15,8 +15,8 @@ export class SchedulerService {
   async handleCron(){
     // find APPROVED with scheduledAt <= now
     const now = new Date()
-    const tx = await prisma.$transaction(async (prismaTx) => {
-      const toPublish = await prismaTx.content.findMany({ where: { status: 'APPROVED', scheduledAt: { lte: now }, deletedAt: null } })
+    const tx = await prisma.$transaction(async (prismaTx:any) => {
+      const toPublish = await prismaTx.content.findMany({ where: { status: 'APPROVED', scheduledAt: { lte: now } } })
       for(const c of toPublish){
         await prismaTx.content.update({ where: { id: c.id }, data: { status: 'PUBLISHED' } })
         await prismaTx.auditLog.create({ data: { tenantId: c.tenantId, actorRole: 'SYSTEM', action: 'content.publish', resource: 'content', payload: { contentId: c.id } } })

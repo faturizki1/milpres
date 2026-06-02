@@ -9,7 +9,7 @@ import { Roles } from '../common/roles.decorator'
 @Controller('auth')
 @UseInterceptors(AuditInterceptor)
 export class AuthController {
-  constructor(private authService: AuthService) {}
+  constructor(private _authService: AuthService) {}
 
   @Post('login')
   @HttpCode(200)
@@ -17,16 +17,16 @@ export class AuthController {
     try {
       const { email, password } = body
       const ip = req.ip || (req.headers['x-forwarded-for'] as string) || 'unknown'
-      if (await this.authService.isBlockedIP(String(ip))) {
+      if (await this._authService.isBlockedIP(String(ip))) {
         return { error: 'too_many_requests' }
       }
-      const user = await this.authService.validateUser(email, password)
+      const user = await this._authService.validateUser(email, password)
       if (!user) {
-        await this.authService.recordFailedIP(String(ip))
+        await this._authService.recordFailedIP(String(ip))
         return { error: 'invalid_credentials' }
       }
-      await this.authService.resetFailedIP(String(ip))
-      const tokens = await this.authService.login(user)
+      await this._authService.resetFailedIP(String(ip))
+      const tokens = await this._authService.login(user)
       // set refresh token as httpOnly cookie
       res.cookie('refresh_token', tokens.refresh_token, { httpOnly: true, maxAge: 30 * 24 * 60 * 60 * 1000 })
       return { access_token: tokens.access_token }
@@ -41,26 +41,26 @@ export class AuthController {
   async refresh(@Req() req: Request) {
     const token = req.cookies?.refresh_token
     if (!token) return { error: 'no_refresh_token' }
-    const tokens = await this.authService.refresh(token)
+    const tokens = await this._authService.refresh(token)
     return tokens
   }
 
   @Post('logout')
   async logout(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
     const token = req.cookies?.refresh_token
-    if (token) await this.authService.logout(token)
+    if (token) await this._authService.logout(token)
     res.clearCookie('refresh_token')
     return { ok: true }
   }
 
   @Post('forgot-password')
-  async forgotPassword(@Body() body: any) {
+  async forgotPassword(@Body() _body: any) {
     // Minimal stub: create token and log - in real app send email
     return { ok: true }
   }
 
   @Post('reset-password')
-  async resetPassword(@Body() body: any) {
+  async resetPassword(@Body() _body: any) {
     // Minimal stub
     return { ok: true }
   }
@@ -74,7 +74,7 @@ export class AuthController {
   @Get('admin')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles('ADMIN')
-  async adminOnly(@Req() req: Request) {
+  async adminOnly(@Req() _req: Request) {
     return { msg: 'admin area' }
   }
 }

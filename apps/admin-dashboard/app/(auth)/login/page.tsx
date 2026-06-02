@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react'
-import { useAuth } from '../../components/AuthProvider'
+import { useAuth } from '../../../components/AuthProvider'
 
 export default function LoginPage(){
   const { login } = useAuth()

@@ -4,7 +4,7 @@ export const revalidate = 3600
 
 export default async function CalendarPage({ params }: { params: Promise<{ tenantSlug: string }> }) {
   const { tenantSlug } = await params
-  const config = await fetchTenantSiteConfig(tenantSlug)
+  const _config = await fetchTenantSiteConfig(tenantSlug)
   return (
     <section>
       <h1>Kalender Kegiatan</h1>

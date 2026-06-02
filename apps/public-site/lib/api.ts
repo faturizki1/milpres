@@ -1,6 +1,6 @@
 const PUBLIC_API_BASE = process.env.CONTENT_SERVICE_URL || 'http://localhost:4000'
 
-async function fetchJson<T>(path: string, init?: RequestInit) {
+async function fetchJson<T>(path: string, init?: any) {
   const res = await fetch(`${PUBLIC_API_BASE}${path}`, { cache: 'force-cache', ...init })
   if (!res.ok) {
     throw new Error(`Failed to fetch ${path}: ${res.status}`)

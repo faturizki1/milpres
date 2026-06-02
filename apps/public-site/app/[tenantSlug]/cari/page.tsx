@@ -25,7 +25,7 @@ export default async function SearchPage({ params, searchParams }: { params: Pro
                 <p>{excerpt(item.excerpt || item.body, 'Ringkasan...')}</p>
               </div>
             </article>
-          )) : <p>Tidak ada hasil untuk "{query}".</p>}
+          )) : <p>Tidak ada hasil untuk &quot;{query}&quot;.</p>}
         </div>
       ) : <p>Masukkan kata kunci untuk mencari berita.</p>}
     </section>

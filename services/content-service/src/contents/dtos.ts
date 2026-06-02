@@ -1,6 +1,6 @@
 export class CreateContentDto {
-  title: string
-  body: string
+  title!: string
+  body!: string
   scheduledAt?: string | null
   tags?: string[]
 }

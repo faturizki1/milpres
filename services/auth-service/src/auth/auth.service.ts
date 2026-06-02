@@ -10,7 +10,7 @@ const redis = new Redis({ host: process.env.REDIS_HOST || 'localhost', port: Num
 
 @Injectable()
 export class AuthService {
-  constructor(private jwtService: JwtService) {}
+  constructor(private _jwtService: JwtService) {}
 
   async validateUser(email: string, pass: string) {
     const user = await prisma.user.findFirst({ where: { email } })
@@ -34,7 +34,7 @@ export class AuthService {
       role: user.role,
       email: user.email,
     }
-    const accessToken = this.jwtService.sign(payload)
+    const accessToken = this._jwtService.sign(payload)
     const refreshToken = uuidv4()
     // store refresh token in redis with expiry 30 days
     await redis.set(`refresh:${refreshToken}`, user.id, 'EX', 30 * 24 * 60 * 60)
@@ -54,7 +54,7 @@ export class AuthService {
       role: user.role,
       email: user.email,
     }
-    const accessToken = this.jwtService.sign(payload)
+    const accessToken = this._jwtService.sign(payload)
     return { access_token: accessToken }
   }
 

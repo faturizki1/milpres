@@ -1,6 +1,6 @@
 import { SiteConfig } from '../lib/api'
 
-export function Footer({ siteConfig, tenantSlug }: { siteConfig: SiteConfig['siteConfig']; tenantSlug: string }) {
+export function Footer({ siteConfig }: { siteConfig: SiteConfig['siteConfig'] }) {
   return (
     <footer className="footer-bar">
       <div className="footer-inner">
