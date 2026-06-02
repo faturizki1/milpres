@@ -1,0 +1,66 @@
+name: CI / Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install deps
+        run: npm ci
+      - name: Run lint
+        run: npm run lint --if-present
+
+  test:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install deps
+        run: npm ci
+      - name: Run tests
+        run: npm test --if-present
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install deps
+        run: npm ci
+      - name: Build monorepo
+        run: npm run build --if-present
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Railway CLI
+        uses: railwayapp/railway-action@v2
+        with:
+          apiKey: ${{ secrets.RAILWAY_API_KEY }}
+      - name: Deploy to Railway
+        run: |
+          railway up --no-open --yes
+      - name: Run Prisma Migrations (auth-service)
+        run: |
+          railway run -- "cd services/auth-service && npx prisma migrate deploy"
+      - name: Run Prisma Migrations (content-service)
+        run: |
+          railway run -- "cd services/content-service && npx prisma migrate deploy"

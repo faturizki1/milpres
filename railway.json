@@ -1,0 +1,54 @@
+{
+  "services": [
+    {
+      "name": "auth-service",
+      "path": "services/auth-service",
+      "buildCommand": "docker build -t auth-service .",
+      "startCommand": "docker run -e PORT=$PORT auth-service",
+      "env": [
+        "DATABASE_URL",
+        "JWT_SECRET",
+        "REDIS_URL",
+        "MINIO_ENDPOINT",
+        "MINIO_ACCESS_KEY",
+        "MINIO_SECRET_KEY"
+      ]
+    },
+    {
+      "name": "content-service",
+      "path": "services/content-service",
+      "buildCommand": "docker build -t content-service .",
+      "startCommand": "docker run -e PORT=$PORT content-service",
+      "env": [
+        "DATABASE_URL",
+        "REDIS_URL",
+        "MINIO_ENDPOINT",
+        "MINIO_ACCESS_KEY",
+        "MINIO_SECRET_KEY"
+      ]
+    },
+    {
+      "name": "admin-dashboard",
+      "path": "apps/admin-dashboard",
+      "buildCommand": "docker build -t admin-dashboard .",
+      "startCommand": "docker run -e PORT=$PORT admin-dashboard",
+      "env": [
+        "NEXT_PUBLIC_API_BASE",
+        "AUTH_SERVICE_URL",
+        "CONTENT_SERVICE_URL"
+      ]
+    },
+    {
+      "name": "public-site",
+      "path": "apps/public-site",
+      "buildCommand": "docker build -t public-site .",
+      "startCommand": "docker run -e PORT=$PORT public-site",
+      "env": [
+        "NEXT_PUBLIC_API_BASE",
+        "MINIO_ENDPOINT",
+        "MINIO_ACCESS_KEY",
+        "MINIO_SECRET_KEY"
+      ]
+    }
+  ]
+}

@@ -22,18 +22,21 @@ export class AuditInterceptor implements NestInterceptor {
 
     if (!action) return next.handle()
 
-    const start = Date.now()
     return next.handle().pipe(
       tap(async (res) => {
-        const success = !(res && res.error)
-        await prisma.auditLog.create({ data: {
-          tenantId,
-          actorId: actor,
-          actorRole: req.user?.role || 'ANONYMOUS',
-          action: success ? action : action + '_failed',
-          resource: 'auth',
-          payload: { path, body: req.body },
-        }})
+        try {
+          const success = !(res && res.error)
+          await prisma.auditLog.create({ data: {
+            tenantId,
+            actorId: actor,
+            actorRole: req.user?.role || 'ANONYMOUS',
+            action: success ? action : action + '_failed',
+            resource: 'auth',
+            payload: { path, body: req.body },
+          }})
+        } catch (e) {
+          console.error('audit log error', e)
+        }
       })
     )
   }

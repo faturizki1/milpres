@@ -15,7 +15,13 @@ export class AuthService {
   async validateUser(email: string, pass: string) {
     const user = await prisma.user.findFirst({ where: { email } })
     if (!user) return null
-    const ok = await argon2.verify(user.passwordHash, pass)
+    let ok = false
+    try {
+      ok = await argon2.verify(user.passwordHash, pass)
+    } catch (e) {
+      // fallback for dev seeds that might have plain text password
+      if (user.passwordHash === pass) ok = true
+    }
     if (!ok) return null
     return user
   }
@@ -54,5 +60,22 @@ export class AuthService {
 
   async logout(token: string) {
     await redis.del(`refresh:${token}`)
+  }
+
+  // login attempt tracking
+  async isBlockedIP(ip: string) {
+    const v = await redis.get(`fail:${ip}`)
+    return v && parseInt(v) >= 5
+  }
+
+  async recordFailedIP(ip: string) {
+    const key = `fail:${ip}`
+    const v = await redis.incr(key)
+    if (v === 1) await redis.expire(key, 30 * 60) // 30 minutes
+    return v
+  }
+
+  async resetFailedIP(ip: string) {
+    await redis.del(`fail:${ip}`)
   }
 }

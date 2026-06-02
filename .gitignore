@@ -1,0 +1,61 @@
+# Node modules
+node_modules/
+
+# Environment files
+.env
+.env.*
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Dependency directories
+.pnp/
+.pnp.js
+
+# Build outputs
+**/dist/
+**/build/
+**/.next/
+**/.out/
+**/coverage/
+
+# Package manager files that should not be tracked for pnpm monorepos
+**/package-lock.json
+**/yarn.lock
+
+# Local editor files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# MacOS
+.DS_Store
+
+# Turborepo cache
+.turbo/
+
+# Docker
+docker-compose.override.yml
+
+# Misc
+*.tgz
+*.cache
+
+# Temporary files
+tmp/
+.temp/
+.cache/
+
+# system files
+Thumbs.db

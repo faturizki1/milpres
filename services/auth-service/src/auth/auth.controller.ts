@@ -1,7 +1,10 @@
-import { Controller, Post, Body, Req, Res, Get, UseInterceptors, HttpCode } from '@nestjs/common'
+import { Controller, Post, Body, Req, Res, Get, UseInterceptors, HttpCode, UseGuards } from '@nestjs/common'
 import { AuthService } from './auth.service'
 import { Request, Response } from 'express'
 import { AuditInterceptor } from '../common/audit.interceptor'
+import { JwtAuthGuard } from '../common/jwt-auth.guard'
+import { RolesGuard } from '../common/roles.guard'
+import { Roles } from '../common/roles.decorator'
 
 @Controller('auth')
 @UseInterceptors(AuditInterceptor)
@@ -10,17 +13,28 @@ export class AuthController {
 
   @Post('login')
   @HttpCode(200)
-  async login(@Body() body: any, @Res({ passthrough: true }) res: Response) {
-    const { email, password } = body
-    const user = await this.authService.validateUser(email, password)
-    if (!user) {
-      // Audit handled by interceptor (auth.login_failed)
-      return { error: 'invalid_credentials' }
+  async login(@Body() body: any, @Req() req: Request, @Res({ passthrough: true }) res: Response) {
+    try {
+      const { email, password } = body
+      const ip = req.ip || (req.headers['x-forwarded-for'] as string) || 'unknown'
+      if (await this.authService.isBlockedIP(String(ip))) {
+        return { error: 'too_many_requests' }
+      }
+      const user = await this.authService.validateUser(email, password)
+      if (!user) {
+        await this.authService.recordFailedIP(String(ip))
+        return { error: 'invalid_credentials' }
+      }
+      await this.authService.resetFailedIP(String(ip))
+      const tokens = await this.authService.login(user)
+      // set refresh token as httpOnly cookie
+      res.cookie('refresh_token', tokens.refresh_token, { httpOnly: true, maxAge: 30 * 24 * 60 * 60 * 1000 })
+      return { access_token: tokens.access_token }
+    } catch (err) {
+      console.error('login error', err)
+      return { statusCode: 500, message: 'Internal server error' }
     }
-    const tokens = await this.authService.login(user)
-    // set refresh token as httpOnly cookie
-    res.cookie('refresh_token', tokens.refresh_token, { httpOnly: true, maxAge: 30 * 24 * 60 * 60 * 1000 })
-    return { access_token: tokens.access_token }
+    
   }
 
   @Post('refresh')
@@ -52,7 +66,15 @@ export class AuthController {
   }
 
   @Get('me')
+  @UseGuards(JwtAuthGuard)
   async me(@Req() req: Request) {
     return { user: (req as any).user || null }
+  }
+
+  @Get('admin')
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  @Roles('ADMIN')
+  async adminOnly(@Req() req: Request) {
+    return { msg: 'admin area' }
   }
 }
