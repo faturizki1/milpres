@@ -1,0 +1,19 @@
+[build]
+builder = "dockerfile"
+dockerfilePath = "Dockerfile"
+
+[[services]]
+name = "auth-service"
+dir = "services/auth-service"
+
+[[services]]
+name = "content-service"
+dir = "services/content-service"
+
+[[services]]
+name = "admin-dashboard"
+dir = "apps/admin-dashboard"
+
+[[services]]
+name = "public-site"
+dir = "apps/public-site"

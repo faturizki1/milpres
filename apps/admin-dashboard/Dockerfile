@@ -1,23 +1,43 @@
-FROM node:22-alpine AS deps
-WORKDIR /app
-COPY package*.json ./
-RUN apk add --no-cache python3 make g++ && npm ci
-
 FROM node:22-alpine AS builder
 WORKDIR /app
-COPY . .
-COPY --from=deps /app/node_modules ./node_modules
-RUN npm run build
+ENV NODE_ENV=production
+
+RUN apk add --no-cache python3 make g++
+RUN npm install -g pnpm
+
+# Copy root workspace files
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+
+# Copy all packages
+COPY packages ./packages
+COPY apps ./apps
+COPY services ./services
+
+# Install dependencies
+RUN pnpm install --frozen-lockfile
+
+# Build only admin-dashboard
+RUN pnpm --filter=admin-dashboard run build
 
 FROM node:22-alpine AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 RUN addgroup -S next && adduser -S next -G next
-COPY --from=builder /app/.next/standalone .
-COPY --from=builder /app/.next/static ./.next/static
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/package*.json ./
-RUN npm ci --omit=dev
+
+# Copy workspace config
+COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+COPY packages ./packages
+COPY apps/admin-dashboard/package.json ./apps/admin-dashboard/
+
+# Install runtime dependencies
+RUN npm install -g pnpm && pnpm install --frozen-lockfile --prod
+
+# Copy built standalone app
+COPY --from=builder /app/apps/admin-dashboard/.next/standalone ./apps/admin-dashboard/
+COPY --from=builder /app/apps/admin-dashboard/.next/static ./apps/admin-dashboard/.next/static
+COPY --from=builder /app/apps/admin-dashboard/public ./apps/admin-dashboard/public
+
 USER next
 EXPOSE 3000
+WORKDIR /app/apps/admin-dashboard
 CMD ["node", "server.js"]

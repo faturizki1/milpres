@@ -1,5 +1,4 @@
 
-
 > @milpers/auth-service@0.0.0 build /workspaces/milpres/services/auth-service
 > tsc -p tsconfig.build.json
 

@@ -1,82 +1,86 @@
 
-
 > admin-dashboard@0.0.0 build /workspaces/milpres/apps/admin-dashboard
 > next build
 
-  [1m[38;2;173;127;168m▲ Next.js 15.0.0[39m[22m
+   ▲ Next.js 15.0.7
 
- [37m[1m [22m[39m Creating an optimized production build ...
-<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'typescript/lib/typescript' in /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build for build dependencies doesn't lead to expected result '/workspaces/milpres/node_modules/typescript/lib/typescript.js', but to '/workspaces/milpres/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js' instead. Resolving dependencies are ignored for this path.
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'typescript/lib/typescript' in /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build for build dependencies doesn't lead to expected result '/workspaces/milpres/node_modules/typescript/lib/typescript.js', but to '/workspaces/milpres/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js' instead. Resolving dependencies are ignored for this path.
 <w>  at unknown 4 typescript/lib/typescript
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/plugins/minify-webpack-plugin/src/index.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/plugins/minify-webpack-plugin/src/index.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack-config.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack-config.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
-<w>  at resolve commonjs /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
-<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'typescript/lib/typescript' in /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build for build dependencies doesn't lead to expected result '/workspaces/milpres/node_modules/typescript/lib/typescript.js', but to '/workspaces/milpres/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js' instead. Resolving dependencies are ignored for this path.
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/plugins/minify-webpack-plugin/src/index.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/plugins/minify-webpack-plugin/src/index.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack-config.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack-config.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/handle-externals.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/handle-externals.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at resolve commonjs /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'typescript/lib/typescript' in /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build for build dependencies doesn't lead to expected result '/workspaces/milpres/node_modules/typescript/lib/typescript.js', but to '/workspaces/milpres/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js' instead. Resolving dependencies are ignored for this path.
 <w>  at unknown 4 typescript/lib/typescript
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/analysis/parse-module.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/analysis/parse-module.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/analysis/get-page-static-info.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/analysis/get-page-static-info.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js
-<w>  at resolve commonjs /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js
-<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'typescript/lib/typescript' in /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build for build dependencies doesn't lead to expected result '/workspaces/milpres/node_modules/typescript/lib/typescript.js', but to '/workspaces/milpres/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js' instead. Resolving dependencies are ignored for this path.
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/analysis/parse-module.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/analysis/parse-module.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/analysis/get-page-static-info.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/analysis/get-page-static-info.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js
+<w>  at resolve commonjs /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-flight-loader/index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving 'typescript/lib/typescript' in /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build for build dependencies doesn't lead to expected result '/workspaces/milpres/node_modules/typescript/lib/typescript.js', but to '/workspaces/milpres/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js' instead. Resolving dependencies are ignored for this path.
 <w>  at unknown 4 typescript/lib/typescript
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
-<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
-<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
-<w>  at resolve commonjs /workspaces/milpres/node_modules/.pnpm/next@15.0.0_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
- [32m[1m✓[22m[39m Compiled successfully
-[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G[?25h [37m[1m [22m[39m Linting and checking validity of types     [32m[1m✓[22m[39m Linting and checking validity of types 
-[?25l [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G[?25h [37m[1m [22m[39m Collecting page data     [32m[1m✓[22m[39m Collecting page data 
-[?25l [37m[1m [22m[39m Generating static pages (0/13)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/13)  [36m[=   ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/13)  [36m[==  ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/13)  [36m[=== ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/13)  [36m[ ===][39m[2K[1G [37m[1m [22m[39m Generating static pages (2/13)  [36m[  ==][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (13/13)
-[?25l [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[?25l [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting build traces     [32m[1m✓[22m[39m Collecting build traces 
-[2K[1G[?25h [37m[1m [22m[39m Finalizing page optimization     [32m[1m✓[22m[39m Finalizing page optimization 
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/load-jsconfig.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/server/dev/turbopack-utils.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/swc/index.js
+<w>  at file dependencies /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at file /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+<w>  at resolve commonjs /workspaces/milpres/node_modules/.pnpm/next@15.0.7_react-dom@18.2.0_react@18.2.0/node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/13) ...
+   Generating static pages (3/13) 
+   Generating static pages (6/13) 
+   Generating static pages (9/13) 
+ ✓ Generating static pages (13/13)
+   Finalizing page optimization ...
+   Collecting build traces ...
 
-[4mRoute (app)[24m                              [4mSize[24m     [4mFirst Load JS[24m
-┌ ○ /_not-found                          897 B          [37m[1m99.8 kB[22m[39m
-├ ƒ /api/mock-contents                   155 B          [37m[1m99.1 kB[22m[39m
-├ ƒ /api/mock-create                     155 B          [37m[1m99.1 kB[22m[39m
-├ ○ /contents                            1.6 kB          [37m[1m101 kB[22m[39m
-├ ƒ /contents/[id]/edit                  348 B          [37m[1m99.3 kB[22m[39m
-├ ƒ /contents/[id]/versions              155 B          [37m[1m99.1 kB[22m[39m
-├ ○ /contents/new                        789 B          [37m[1m99.7 kB[22m[39m
-├ ○ /dashboard                           155 B          [37m[1m99.1 kB[22m[39m
-├ ○ /forgot-password                     155 B          [37m[1m99.1 kB[22m[39m
-├ ○ /login                               1.66 kB         [37m[1m101 kB[22m[39m
-├ ○ /media                               155 B          [37m[1m99.1 kB[22m[39m
-├ ○ /settings                            155 B          [37m[1m99.1 kB[22m[39m
-└ ○ /super-admin                         155 B          [37m[1m99.1 kB[22m[39m
-+ First Load JS shared by all            [37m[1m98.9 kB[22m[39m
-  ├ chunks/1d1a5ccb-a6f8f7e1e53247d2.js  52.6 kB
-  ├ chunks/585-af7cb4ac4ae89ed5.js       44.5 kB
+Route (app)                              Size     First Load JS
+┌ ○ /_not-found                          898 B           101 kB
+├ ƒ /api/mock-contents                   155 B           100 kB
+├ ƒ /api/mock-create                     155 B           100 kB
+├ ○ /contents                            1.6 kB          101 kB
+├ ƒ /contents/[id]/edit                  349 B           100 kB
+├ ƒ /contents/[id]/versions              155 B           100 kB
+├ ○ /contents/new                        789 B           101 kB
+├ ○ /dashboard                           155 B           100 kB
+├ ○ /forgot-password                     155 B           100 kB
+├ ○ /login                               1.65 kB         101 kB
+├ ○ /media                               155 B           100 kB
+├ ○ /settings                            155 B           100 kB
+└ ○ /super-admin                         155 B           100 kB
++ First Load JS shared by all            99.8 kB
+  ├ chunks/6a29cc91-37aaa2ab188d36cc.js  52.5 kB
+  ├ chunks/863-faa8cc4cf52096f8.js       45.5 kB
   └ other shared chunks (total)          1.82 kB
 
 
-ƒ Middleware                             [37m[1m32 kB[22m[39m
+ƒ Middleware                             32 kB
 
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
 
-[?25h

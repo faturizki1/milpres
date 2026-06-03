@@ -1,42 +1,41 @@
 
-
 > @milpers/public-site@0.0.0 build /workspaces/milpres/apps/public-site
 > next build
 
-  [1m[38;2;173;127;168m▲ Next.js 15.0.0[39m[22m
+   ▲ Next.js 15.0.7
 
- [37m[1m [22m[39m Creating an optimized production build ...
- [32m[1m✓[22m[39m Compiled successfully
-[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G[?25h [37m[1m [22m[39m Linting and checking validity of types     [32m[1m✓[22m[39m Linting and checking validity of types 
-[?25l [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m..[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m...[39m[2K[1G [37m[1m [22m[39m Collecting page data  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting page data     [32m[1m✓[22m[39m Collecting page data 
-[?25l [37m[1m [22m[39m Generating static pages (0/3)  [36m[    ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/3)  [36m[=   ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/3)  [36m[==  ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/3)  [36m[=== ][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/3)  [36m[ ===][39m[2K[1G [37m[1m [22m[39m Generating static pages (0/3)  [36m[  ==][39m[2K[1G[?25h [32m[1m✓[22m[39m Generating static pages (3/3)
-[?25l [37m[1m [22m[39m Finalizing page optimization  [36m.[39m[?25l [37m[1m [22m[39m Collecting build traces  [36m.[39m[2K[1G[?25h [37m[1m [22m[39m Collecting build traces     [32m[1m✓[22m[39m Collecting build traces 
-[2K[1G[?25h [37m[1m [22m[39m Finalizing page optimization     [32m[1m✓[22m[39m Finalizing page optimization 
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/3) ...
+ ✓ Generating static pages (3/3)
+   Finalizing page optimization ...
+   Collecting build traces ...
 
-[4mRoute (app)[24m                              [4mSize[24m     [4mFirst Load JS[24m
-┌ ○ /_not-found                          897 B          [37m[1m99.8 kB[22m[39m
-├ ƒ /[tenantSlug]/arsip/[year]/[month]   182 B           [37m[1m108 kB[22m[39m
-├ ƒ /[tenantSlug]/berita                 182 B           [37m[1m108 kB[22m[39m
-├ ƒ /[tenantSlug]/berita/[slug]          1.01 kB         [37m[1m109 kB[22m[39m
-├ ƒ /[tenantSlug]/cari                   182 B           [37m[1m108 kB[22m[39m
-├ ƒ /[tenantSlug]/galeri                 2.05 kB         [37m[1m101 kB[22m[39m
-├ ƒ /[tenantSlug]/galeri/video           182 B           [37m[1m108 kB[22m[39m
-├ ƒ /[tenantSlug]/kalender               154 B          [37m[1m99.1 kB[22m[39m
-├ ƒ /[tenantSlug]/kontak                 154 B          [37m[1m99.1 kB[22m[39m
-├ ƒ /[tenantSlug]/profil                 154 B          [37m[1m99.1 kB[22m[39m
-├ ƒ /[tenantSlug]/rss                    154 B          [37m[1m99.1 kB[22m[39m
-├ ƒ /[tenantSlug]/rss/[category]         154 B          [37m[1m99.1 kB[22m[39m
-├ ƒ /[tenantSlug]/sejarah                154 B          [37m[1m99.1 kB[22m[39m
-├ ƒ /[tenantSlug]/sitemap.xml            0 B                [37m[1m0 B[22m[39m
-├ ƒ /[tenantSlug]/struktur               154 B          [37m[1m99.1 kB[22m[39m
-└ ƒ /api/media/[storageKey]/download     154 B          [37m[1m99.1 kB[22m[39m
-+ First Load JS shared by all            [37m[1m98.9 kB[22m[39m
-  ├ chunks/1d1a5ccb-39ef92e7cfcc9fec.js  52.6 kB
-  ├ chunks/585-762c4f7fcb9d752a.js       44.5 kB
+Route (app)                              Size     First Load JS
+┌ ○ /_not-found                          898 B           101 kB
+├ ƒ /[tenantSlug]/arsip/[year]/[month]   183 B           109 kB
+├ ƒ /[tenantSlug]/berita                 183 B           109 kB
+├ ƒ /[tenantSlug]/berita/[slug]          1.01 kB         110 kB
+├ ƒ /[tenantSlug]/cari                   183 B           109 kB
+├ ƒ /[tenantSlug]/galeri                 2.06 kB         102 kB
+├ ƒ /[tenantSlug]/galeri/video           183 B           109 kB
+├ ƒ /[tenantSlug]/kalender               155 B           100 kB
+├ ƒ /[tenantSlug]/kontak                 155 B           100 kB
+├ ƒ /[tenantSlug]/profil                 155 B           100 kB
+├ ƒ /[tenantSlug]/rss                    155 B           100 kB
+├ ƒ /[tenantSlug]/rss/[category]         155 B           100 kB
+├ ƒ /[tenantSlug]/sejarah                155 B           100 kB
+├ ƒ /[tenantSlug]/sitemap.xml            0 B                0 B
+├ ƒ /[tenantSlug]/struktur               155 B           100 kB
+└ ƒ /api/media/[storageKey]/download     155 B           100 kB
++ First Load JS shared by all            99.8 kB
+  ├ chunks/6a29cc91-e52d597c30962630.js  52.5 kB
+  ├ chunks/863-c894061f77b9fac7.js       45.5 kB
   └ other shared chunks (total)          1.82 kB
 
 
 ○  (Static)   prerendered as static content
 ƒ  (Dynamic)  server-rendered on demand
 
-[?25h
